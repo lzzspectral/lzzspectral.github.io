@@ -133,6 +133,7 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
 
 
 
+    
 ## Algorithm
 
 ### 2-Way spectral clustering
@@ -188,72 +189,97 @@ Unnormalized
 3. Let $y_i\in \mathcal{R}^k$ with $i=1, \dots, n$ be the vector corresponding tot he $i$-th row of $U$.
 4. Cluster the points $(y_i)_{i=1, \dots, n}$ using the k-means algorithm into clusters $C_1, \dots, C_k$.
 5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\left\{j|y_j\in C_i\right\}$.
-
+    
+   
 Normalized
 
 1. Compute the first $k$ generalized eigenvectors $\lambda_1,\dots, \lambda_k$ of the generalized eigenproblem $L\lambda =\alpha D \lambda$ ($D$ is the degree matrix).
 2. The rest are the same.
+
 
 #### Theoretical Guarantee
 
 **Graph cut point of view**
 
 The simplest and most direct way to construct a partition of the graph is to solve the mincut problem, which consists in choosing a partition $A_1, \dots, A_k$  minimizing
+    
 $$
 \text{cut}(A_1, \dots, A_k)=\frac{1}{2}\sum_{i=1}^k W(A_i, \bar{A}_i)
 $$
+    
 where $\bar{A}$ denotes the complement of $A$ and $W(A,B)=\sum_{i\in A, j\in B}w_{ij}$.
 
 **Problem:** In many cases, the solution of mincut simply separates one individual vertex from the rest of the graph, but clusters should be reasonably large groups of points. To encode this problem, two most common objective functions are RatioCut and normalized cut Ncut.
+    
 $$
 \text{RatioCut}(A_1, \dots, A_k)=\frac{1}{2}\sum_{i=1}^k \frac{W(A_i, \bar{A_i})}{|A_i|}=\sum_{i=1}^k\frac{\text{cut}(A_i, \bar{A_i})}{|A_i|}\\\text{Ncut}(A_1,\dots,A_k)=\frac{1}{2}\sum_{i=1}^k \frac{W(A_i,\bar{A_i})}{\text{vol}(A_i)}=\sum_{i=1}^k \frac{\text{cut}(A_i, \bar{A_i})}{\text{vol}(A_i)}
 $$
+    
 **RatioCut**
 
 Given a partition of $V$ into $k$ sets $A_1, \dots, A_k$, we define $k$ indicator vectors,  $h_j=\begin{bmatrix} h_{i,j} & \dots & h_{n,j}\end{bmatrix}^T$, where each vector has $n$ dimension, by
+    
 $$
-\begin{equation}
 h_{i,j}=\left\{ \begin{aligned} \frac{1}{\sqrt{|A_j|}} \quad& v_i\in A_j  \\ 0 \quad& \text{otherwise} \end{aligned} \right. \qquad i=1,\dots, n;j=1, \dots,k \quad (1)
-\end{equation}
 $$
+    
 Construct a matrix $H\in \mathcal{R}^{n\times k}$ as the matrix containing those $k$ indicator vectors as columns. The columns in $H$ are orthonormal to each other $\rightarrow$ $H^{'}H=I$
 
 Since
+    
 $$
 \begin{aligned}(H^{'}LH)_{ii}=h_i^{'}Lh_i &=\frac{1}{2}\sum_{p,q=1}^n w_{pq}(h_{p,i}-h_{q,i})^2\\&=\frac{1}{2}\sum_{v_p\in A_i, v_q\in \bar{A_i} || v_p\in \bar{A_i}, v_q\in A_i}w_{pq}(\frac{1}{\sqrt{|A_i|}})^2\\&=\frac{\text{cut}(A_i, \bar{A_i})}{|A_i|}\end{aligned}
 $$
+    
 Therefore,
+    
 $$
 \text{RatioCut}(A_1,\dots, A_k)=\sum_{i=1}^k h_i^{'}Lh_i=\sum_{i=1}^k(H^{'}LH)_{ii}=Tr(H^{'}LH)
 $$
+    
 The problem of minimizing $\text{RatioCut}(A_1,\dots, A_k)$ can be written as
+    
 $$
 \min_{A_1,\dots, A_k}Tr(H^{'}LH)\quad \text{s.t.} \quad H^{'}H=I, \text{$H$ as defined in (1)}
 $$
+    
 Relax the problem as:
+    
 $$
-\min_{H\in \mathcal{R}^{n\times k}} Tr(H^{'}LH) \quad \text{s.t.} \quad H^{'}H=I \quad \text{where entries of $H$ can take arbitrary real values}
+\min_{H\in \mathcal{R}^{n\times k}} Tr(H^{'}LH) \quad \text{s.t.} \quad H^{'}H=I
 $$
+    
+where entries of $H$ can take arbitrary real values.
+    
+
 Rayleigh-Ritz theorem says that the solution is given by choosing $H$ as the matrix which contains the first $k$ eigenvectors of $L$ as columns, which is in fact the matrix $U$ mentioned in "Procedure" section.
 
 **NCut**
 
 Define the indicator vectors,  $h_j=\begin{bmatrix} h_{i,j} & \dots & h_{n,j}\end{bmatrix}^T$, where each vector has $n$ dimension, by
+    
 $$
 \begin{equation}h_{i,j}=\left\{ \begin{aligned} \frac{1}{\sqrt{vol(A_j)}} \quad& v_i\in A_j  \\ 0 \quad& \text{otherwise} \end{aligned} \right. \qquad i=1,\dots, n;j=1, \dots,k \quad (2)\end{equation}
 $$
+    
 Construct a matrix $H\in \mathcal{R}^{n\times k}$ as the matrix containing those $k$ indicator vectors as columns. The columns in $H$ are orthonormal to each other $\rightarrow$ $H^{'}DH=I$. Then, we have
+    
 $$
 (H^{'}LH)_{ii}=h_i^{'}Lh_i =\frac{\text{cut}(A_i, \bar{A_i})}{vol(A_i)}
 $$
+    
 as above. So the problem of minimizing Ncut can be formulated as
+    
 $$
 \min_{A_1,\dots, A_k}Tr(H^{'}LH)\quad \text{s.t.} \quad H^{'}DH=I, \text{$H$ as defined in (2)}
 $$
+    
 Relax the problem and substituting $T=D^{1/2}H$, we have
+    
 $$
 \min_{H\in \mathcal{R}^{n\times k}} Tr(T^{'}D^{-1/2}LD^{-1/2}T) \quad \text{s.t.} \quad T^{'}T=I
 $$
+    
 This can also lead to the solution $H$ consisting of the first $k$ generalized eigenvectors of $L\lambda =\alpha D \lambda$, corresponding the the normalized spectral clustering algorithm.
 
 ### Time Complexity
