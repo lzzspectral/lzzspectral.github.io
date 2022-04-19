@@ -21,7 +21,9 @@ And you can include links, like this [link to fast.ai](https://www.fast.ai). Pos
    2. More expensive approaches: ...
 
 **k-way spectral clustering**
+
 One approach: Apply 2-way repeatedly until a total of $k$ clusters have been found.
+
 Another approach: 
 
 1. Compute the first $k$ eigenvectors $\lambda_1,\dots, \lambda_k$ of $L$.
@@ -35,6 +37,7 @@ $$
 \lambda_2=\min_{x:x^T\lambda_1=0} \frac{x^TLx}{x^Tx}
 $$
 where $\lambda_1$ is the first eigenvector of $L$, namely, $\lambda_1=\begin{bmatrix} 1&\dots 1\end{bmatrix}$.
+
 **Proof**
 
 
@@ -43,27 +46,33 @@ Since,
 $$
 x^TLx = \sum_{(i,j)\in E}(x_i-x_j)^2
 $$
+
 And $x$ is orthogonal to $\lambda_1$, giving $\sum_i x_i=0$, we have
 $$
 \lambda_2=\min_{\sum_i x_i=0} \frac{\sum_{(i,j)\in E}(x_i-x_j)^2}{\sum_i x_i^2}
 $$
+
 Therefore, the approach of using $\lambda_2$ to cluster vertices into 2 sets in 2-way spectral clustering is aimed to minimizing the distances between the two sets $A$ and $B$, where $i\in A$ and $j\in B$.
 
 **Approximation guarantee** 
 
 
 The **conductance** of a subset $S\subset V$ can be defined as
+
 $$
 \phi(S)=\frac{|E(S, \bar{S})|}{d\min\left\{|S|, |\bar{S}|\right\}}
 $$
+
 where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement.
 
 The conductance of the graph $G$ is defined as
+
 $$
 \phi(G) = \min_{S\subset V}\phi(S)
 $$
 
 Cheeger's Inequality states that for any graph $G$,
+
 $$
 \frac{\lambda_2}{2} \leq \phi(G) \leq \sqrt{2\lambda_2}
 $$
