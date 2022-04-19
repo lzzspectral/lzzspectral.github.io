@@ -8,25 +8,17 @@ $x + y = b$ in tttttt
 $$ 1 + 3 = 4$$
 And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
 
-\section{Introduction \& Graph Cut}
+## Introduction \& Graph Cut
 
 Suppose we have an undirected graph $G(V,E)$, and we would like to perform a bi-partitioning task on the graph, i.e., dividing vertices in $V$ into two disjoint groups $A$ and $B$.
 
-\vspace{0.5cm}
-
 How to define a good partition?
 
-    \begin{itemize}
-      \item Maximize the number of within-group
+1. Maximize the number of within-group
 connections.
-      \item Minimize the number of between-group connections.
-    \end{itemize}
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{good partition.png}
-    \label{fig:my_label}
-\end{figure}
+2. Minimize the number of between-group connections.
+
+![Example of a good partition]{images/good partition.png}
 
 Definition (Graph Cuts): Set of edges with one endpoint in each group:
 
