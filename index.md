@@ -226,4 +226,7 @@ Therefore, using this approach, the 2-way spectral clustering algorithm is able 
 
 ![image-20220418215442089](C:%5CUsers%5Chelli%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20220418215442089.png)
 
-​		$O(k^3)+O(knt)$, where $t$ is the number of iterations
+ $O(k^3)+O(knt)$, where $t$ is the number of iterations
+    
+
+- [1][test](baidu.com)
