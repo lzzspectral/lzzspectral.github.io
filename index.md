@@ -20,7 +20,6 @@ connections.
 
 <image src = "images/good_partition.png" width="500">
     
-![Example of a good partition](images/good_partition.png)
 
 
 Definition (Graph Cuts): Set of edges with one endpoint in each group:
