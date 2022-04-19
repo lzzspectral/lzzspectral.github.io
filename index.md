@@ -18,7 +18,7 @@ How to define a good partition?
 connections.
 2. Minimize the number of between-group connections.
 
-<image src = "images/good_partition.png" width="100">
+<image src = "images/good_partition.png" width="500">
     
 ![Example of a good partition](images/good_partition.png)
 
