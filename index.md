@@ -107,8 +107,6 @@ We also know that $x$ has another two properties:
     
 Up to this point, we can convert the original fact about $\lambda_2$ to be:
 
-% $$\lambda_2=\min_{\text{All labelings of nodes $i$ so that $\Sigma_i x_i = 0$}}\frac{\Sigma_{(i,j)\in E}(x_i-x_j)^2}{\Sigma_ix^2_i}$$
-
 $$
 \begin{aligned}
 \lambda_2&=\min_{\text{All labelings of nodes $i$ so that $\Sigma_i x_i = 0$}}\frac{\Sigma_{(i,j)\in E}(x_i-x_j)^2}{\Sigma_ix^2_i} \\
