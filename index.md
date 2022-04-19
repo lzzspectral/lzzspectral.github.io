@@ -53,7 +53,7 @@ So, what is a good graph cut criterion?
       $$\Phi(A,B)=\frac{cut(A,B)}{\min(vol(A),vol(B))}$$
       
       where $vol(A)$ = total degree of the nodes in $A$ = number of edge end points in A. And we are trying to find the minimal conductance.
-      
+
       Advantages: Conductance produces more balanced partitions. The reason is as following: The total number of edges in the graph $G$ is fixed. After bi-partitioning, we split the total degree of all nodes in $G$ into two parts, and take the smaller one among these two as the denominator of the conductance. Therefore, a smaller conductance tends to give us a more balanced partition.
     \end{enumerate}
 
@@ -228,5 +228,25 @@ Therefore, using this approach, the 2-way spectral clustering algorithm is able 
 
  $O(k^3)+O(knt)$, where $t$ is the number of iterations
     
+ 
+    
+    
+## Multi-way ($k$-way) spectral clustering
+Intuitively, we can perform a $k$-way spectral clustering by recursively applying the $2$-way partitoning algorithms as mentioned above. However, the higher-order spectral information is not utilized in this case. There are several algorithms proposed for multi-way spectral partitioning by minimizing the generalized normalized cut and graph expansion.
 
+__Generalized normalized cut__: Suppose $S_1, S_2, \ldots, S_k$ denotes a $k$-partiton of $G$, then the $k$-way normalized cut is defined as 
+$$
+N_{c u t, k}(S)=\sum_{i=1}^{k} \frac{\left|E\left(S_{i}, \bar{S}_{i}\right)\right|}{d\left(S_{i}\right)}.
+$$
+
+Based on the $k$-way normalized cut, Shi and Malik [1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
+    1. Compute the unnormalized Laplacian $L$.
+    2. Compute the $n$ eigenvectors $u_1, \ldots, u_k$ by solving the generalized eigenproblem $Lu = \lambda D u$.
+    3. Let $U \in \mathbb{R}^{n \times n}$ be the feature matrix, and apply $k$-means algorithm 
+
+    
+    
+
+## Examples
+    
 - [1][test](baidu.com)
