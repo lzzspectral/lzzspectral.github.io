@@ -242,9 +242,9 @@ $$
 Based on the $k$-way normalized cut, Shi and Malik [1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
     1. Compute the unnormalized Laplacian $L$.
     2. Compute the $n$ eigenvectors $u_1, \ldots, u_k$ by solving the generalized eigenproblem $Lu = \lambda D u$.
-    3. Let $U \in \mathbb{R}^{n \times n}$ be the feature matrix, and apply $k$-means algorithm 
+    3. Let $U \in \mathbb{R}^{n \times n}$ be the feature matrix, and $y_i \in \mathbb{R}^{n}$ be the vector corresponding to       the $i$-th row of $U$。
+    4. Apply $k$-means algorithm to cluster $y_i, i = 1, \ldots, n$ into $k' \ge k$ clusters, and greedily merge clusters such       that the normalized cut is minimized, until there are only $k$ clusters left.
 
-    
     
 
 ## Examples
