@@ -149,6 +149,14 @@ Then, two clusters are formed by looking the sign of $x_i$.
 
 **Cheeger's inequality**
 
+The **conductance** of a subset $S\subset V$ can be defined as
+
+$$
+\phi(S)=\frac{|E(S, \bar{S})|}{d\min\left\{|S|, |\bar{S}|\right\}}
+$$
+
+where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement.
+
 The conductance of the graph $G$ is defined as
 
 $$
