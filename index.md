@@ -32,21 +32,23 @@ where, if the graph is weighted $w_{ij}$ is the weight, otherwise, all $w_{ij}\i
 At this point, we first focus on the unweighted graph.
 
 So, what is a good graph cut criterion?
+    
+# Minimum-cut: Minimize weight of connections between groups.
+    
+$$\arg \min_{A,B}cut(A,B)$$
+    
+- Only considers external cluster connections.
 
-    \begin{enumerate}
-      \item \textbf{Minimum-cut}: Minimize weight of connections between groups.
-      $$\arg \min_{A,B}cut(A,B)$$
-      Drawbacks:
-        \begin{itemize}
-        \item Only considers external cluster connections.
-        \item Does not consider internal cluster connectivity.
-        \end{itemize}
-      \item \textbf{Conductance}: Connectivity between groups relative to the density of each group.
-      $$\Phi(A,B)=\frac{cut(A,B)}{\min(vol(A),vol(B))}$$
-      
-      where $vol(A)$ = total degree of the nodes in $A$ = number of edge end points in A. And we are trying to find the minimal conductance.
+- Does not consider internal cluster connectivity.
 
-      Advantages: Conductance produces more balanced partitions. The reason is as following: The total number of edges in the graph $G$ is fixed. After bi-partitioning, we split the total degree of all nodes in $G$ into two parts, and take the smaller one among these two as the denominator of the conductance. Therefore, a smaller conductance tends to give us a more balanced partition.
+# Conductance: Connectivity between groups relative to the density of each group.
+
+$$\Phi(A,B)=\frac{cut(A,B)}{\min(vol(A),vol(B))}$$
+
+where $vol(A)$ = total degree of the nodes in $A$ = number of edge end points in A. And we are trying to find the minimal conductance.
+
+
+Advantages: Conductance produces more balanced partitions. The reason is as following: The total number of edges in the graph $G$ is fixed. After bi-partitioning, we split the total degree of all nodes in $G$ into two parts, and take the smaller one among these two as the denominator of the conductance. Therefore, a smaller conductance tends to give us a more balanced partition.
     \end{enumerate}
 
 \section{Graph Laplacian matrix}
