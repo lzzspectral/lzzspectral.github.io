@@ -137,14 +137,27 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
 
 ### Theoretical Guarantee
 
+The intuition of using $\lambda_2$
+
+$$
+\lambda_2=\min_{\sum x_i=1}\frac{\sum_{(i,j)\in E}(x_i-x_j)^2}{\sum_i x_i^2}
+\\
+\lambda_2=0 \Rightarrow \forall (u,v)\in E, x_u=x_v
+$$
+
+Then, two clusters are formed by looking the sign of $x_i$.
+
 
 The **conductance** of a subset $S\subset V$ can be defined as
+
 $$
 \phi(S)=\frac{|E(S, \bar{S})|}{d\min\left\{|S|, |\bar{S}|\right\}}
 $$
+
 where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement.
 
 The conductance of the graph $G$ is defined as
+
 $$
 \phi(G) = \min_{S\subset V}\phi(S)
 $$
@@ -154,6 +167,7 @@ which is a way of measuring the performance of a particular partition of the gra
 **Cheeger's inequality**
 
 Cheeger's Inequality provides a worst-case performance guarantee for spectral clustering, which states that for any graph $G$,
+
 $$
 \frac{\lambda_2}{2} \leq \phi(G) \leq \sqrt{2\lambda_2}
 $$
