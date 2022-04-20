@@ -376,7 +376,7 @@ $$
 5. __Merging__: For a subset $S \subseteq V$, define $\mathcal{M}(S) = \sum_{v \in S} w(v) \|\| F^{\ast} (v) \|\|$
 Sort ${S_1, \ldots, S_m}$ in descending order based on $\mathcal{M}(S_i)$. Let $k' = \lceil \frac{3}{2}k \rceil$, and then for $j = k'+1, \ldots, m$, iteratively merge $S_j$ to the set with smallest $\mathcal{M}(S_i), i\le k'$. 
 
-5. __Chegger Sweep__: Foe $i = 1, \ldots, k'$, choose a threshold $\tau$ such that $\hat{S}_{i}=\{v \in S_{i}:\left\|F^{\ast}(v)\right\|^{2} \geq \tau\}$ has the least expansion value. Then we select $k$ of the sets $\hat{S_{1}}, \ldots, \hat{S_{k'}}$ that have the smallest expansion.
+5. __Chegger Sweep__: Foe $i = 1, \ldots, k'$, choose a threshold $\tau$ such that $\hat{S_{i}}=\{v \in S_{i}:\left\|F^{\ast}(v)\right\|^{2} \geq \tau\}$ has the least expansion value. Then we select $k$ of the sets $\hat{S_{1}}, \ldots, \hat{S_{k'}}$ that have the smallest expansion.
 
 
 ## Examples
