@@ -302,7 +302,7 @@ $$
 N_{c u t, k}(S)=\sum_{i=1}^{k} \frac{\left|E\left(S_{i}, \bar{S}_{i}\right)\right|}{d\left(S_{i}\right)}.
 $$
 
-Based on the $k$-way normalized cut, Shi and Malik (2000) [1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
+Based on the $k$-way normalized cut, [Shi and Malik (2000)][1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
 
 1. Compute the unnormalized Laplacian $L$.
 
@@ -312,7 +312,7 @@ Based on the $k$-way normalized cut, Shi and Malik (2000) [1](https://people.eec
 
 4. Apply $k$-means algorithm to cluster $y_i, i = 1, \ldots, n$ into $k' \ge k$ clusters, and greedily merge clusters such that the normalized cut is minimized, until there are only $k$ clusters left.
 
-Ng et al. (2002) [2](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf) also proposes a similar algorithm, however, it leverages the symmetric normalized Laplacian matrix $L_{sym} = I - D^{-1/2} A D^{-1/2}$. Given the adjacency matrix as input, the details are shown as below.
+[Ng et al. (2002)][2](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf) also proposes a similar algorithm, however, it leverages the symmetric normalized Laplacian matrix $L_{sym} = I - D^{-1/2} A D^{-1/2}$. Given the adjacency matrix as input, the details are shown as below.
 
 1. Compute the symmetric normalized Laplacian matrix $L_{sym}$.
 
