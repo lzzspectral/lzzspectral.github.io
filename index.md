@@ -99,10 +99,12 @@ Up to this point, we can convert the original fact about $\lambda_2$ to be:
 
 $$
 \begin{aligned}
-\lambda_2&=\min_{\text{All labelings of nodes $i$ so that $\Sigma_i x_i = 0$}}\frac{\Sigma_{(i,j)\in E}(x_i-x_j)^2}{\Sigma_ix^2_i} \\
-&=\min_{\text{All labelings of nodes $i$ so that $\Sigma_i x_i = 0$}}\Sigma_{(i,j)\in E}(x_i-x_j)^2
+\lambda_2&=\min_{i}\frac{\Sigma_{(i,j)\in E}(x_i-x_j)^2}{\Sigma_ix^2_i} \\
+&=\min_{i}\Sigma_{(i,j)\in E}(x_i-x_j)^2
 \end{aligned}
 $$
+
+where labelings of nodes $i$ so that $\Sigma_i x_i = 0$.
 
 So, we want to assign values $x_i$ to nodes $i$ such that few edges cross $0$. (we want $x_i$ and $x_j$ to subtract each other)
 
