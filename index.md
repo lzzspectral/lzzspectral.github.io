@@ -294,6 +294,7 @@ This can also lead to the solution $H$ consisting of the first $k$ generalized e
     
     
 ## Multi-way ($k$-way) spectral clustering
+
 Intuitively, we can perform a $k$-way spectral clustering by recursively applying the $2$-way partitoning algorithms as mentioned above. However, the higher-order spectral information is not utilized in this case. There are several algorithms proposed for multi-way spectral partitioning by minimizing the generalized normalized cut and graph expansion.
 
 __Generalized normalized cut__: Suppose $S_1, S_2, \ldots, S_k$ denotes a $k$-partiton of $G$, then the $k$-way normalized cut is defined as 
@@ -301,11 +302,63 @@ $$
 N_{c u t, k}(S)=\sum_{i=1}^{k} \frac{\left|E\left(S_{i}, \bar{S}_{i}\right)\right|}{d\left(S_{i}\right)}.
 $$
 
-Based on the $k$-way normalized cut, Shi and Malik [1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
-    1. Compute the unnormalized Laplacian $L$.
-    2. Compute the $n$ eigenvectors $u_1, \ldots, u_k$ by solving the generalized eigenproblem $Lu = \lambda D u$.
-    3. Let $U \in \mathbb{R}^{n \times n}$ be the feature matrix, and $y_i \in \mathbb{R}^{n}$ be the vector corresponding to       the $i$-th row of $U$。
-    4. Apply $k$-means algorithm to cluster $y_i, i = 1, \ldots, n$ into $k' \ge k$ clusters, and greedily merge clusters such       that the normalized cut is minimized, until there are only $k$ clusters left.
+Based on the $k$-way normalized cut, Shi and Malik (2000) [1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
+
+1. Compute the unnormalized Laplacian $L$.
+
+2. Compute the $n$ eigenvectors $u_1, \ldots, u_n$ by solving the generalized eigenproblem $Lu = \lambda D u$.
+
+3. Let $U \in \mathbb{R}^{n \times n}$ be the matrix containing $u_1, \ldots, u_n$ as columns, and $y_i \in \mathbb{R}^{n}$     be the vector corresponding to the $i$-th row of $U$.
+
+4. Apply $k$-means algorithm to cluster $y_i, i = 1, \ldots, n$ into $k' \ge k$ clusters, and greedily merge clusters such that the normalized cut is minimized, until there are only $k$ clusters left.
+
+Ng et al. (2002) [2](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf) also proposes a similar algorithm, however, it leverages the symmetric normalized Laplacian matrix $L_{sym} = I - D^{-1/2} A D^{-1/2}$. Given the adjacency matrix as input, the details are shown as below.
+
+1. Compute the symmetric normalized Laplacian matrix $L_{sym}$.
+
+2. Compute the first $k$ eigenvectors $u_1, \ldots, u_k$ by solving the eigenproblem $L_{sym} u = \lambda u$.
+
+3. Let $U \in \mathbb{R}^{n \times k}$ be the matrix containing $u_1, \ldots, u_k$, and construct matrix $T \in \mathbb{R}^{n \times k}$ by normalizing $U$ (i.e., $T_{i j} = U_{i j}/(\sum_{k} U_{i k}^2)^{1/2}$).
+
+4. Let $y_i \in \mathbb{R}^{n}$ be the vector corresponding to the $i$-th row of $T$. Apply $k$-means algorithm to cluster $y_i, i=1,\ldots, n$ into $k$ clusters. 
+
+
+
+Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012) [3](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\phi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
+$$
+    \phi_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
+$$
+​    where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement. The $k$-way expansion constant for every $k \in \mathbb{N}$ is defined as
+$$
+    \rho_{G}(k)=\min _{k-\text{partition} S_{1}, S_{2}, \ldots, S_{k}} \max \left\{\phi_{G}\left(S_{i}\right): i=1,2, \ldots, k\right\},
+$$
+​    where the minimum is taken over all the collections of $k$ non-empty, disjoint subsets $S_1, S_2, \ldots, S_k \subseteq V$. Then the significant result is given as follows:
+​    
+__Theorem__: For every graph $G$, and every $k \in \mathbb{N}$, we have
+$$
+    \frac{\lambda_{k}}{2} \leq \rho_{G}(k) \leq O\left(k^{2}\right) \sqrt{\lambda_{k}}.
+$$
+
+Through the derivation procedure of the proof, a randomized algorithm for finding the optimal $k$ partitions is derived, and we describe it as follows.
+
+1. __Spectral Embedding__: Compute the first $2k$ eigenvectors $f_i, i = 1,\ldots, 2k$ by solving the generalized eigen-problem $Lf = \lambda D f$, and let $F(v) = [f_1(v), f_2(v), \ldots, f_{2k}(v)], v \in V$ be the embedding of node $v$. 
+
+2. __Random Projection__: Define $h = O(\log k)$, and perform random projection of the vertex embeddings $F(v)$ from $\mathbb{R}^{2k}$ to $\mathbb{R}^{h}$. Specifically, let $\Gamma_{2 k, h}: \mathbb{R}^{2 k} \rightarrow \mathbb{R}^{h}$ be a random linear mapping given by the dot product of the embedding and $h$ i.i.d. Gaussian vectors (i.e., $\Gamma_{2 k, h}(x)=\frac{1}{\sqrt{h}}\left(\left\langle g_{1}, x\right\rangle, \ldots,\left\langle g_{h}, x\right\rangle\right)$), and then we have for each $v \in V$, 
+
+$$
+F^{*}(v)=\frac{1}{\sqrt{h}}\left(\left\langle g_{1}, F(v)\right\rangle, \ldots,\left\langle g_{h}, F(v)\right\rangle\right).
+$$
+
+3. __Random Partitioning__: Determine some constant $m$, and randomly sample $r$ points $x_1, \ldots, x_m$ from the unit ball in $\mathbb{R}^{h}$, which served as "anchor points" (or "centroids"). Each $x_i$ can be regarded as the anchor point of cluster $i$, and we assign each vertex $v \in V$ to its closest anchor point, and the distance is measured by $\| x_i - \frac{F^{*}(v)}{\| F^{*}(v) \|} \|$. Now we have $m$ partitions $S_1 \cup S_2 \cup \ldots \cup S_m = V$.
+
+4. __Merging__: For a subset $S \subseteq V$,  define $\mathcal{M}(S) == \sum_{v \in S} w(v) \|F^{*}(v)\|^2$. Sort ${S_1, \ldots, S_m}$ in descending order based on $\mathcal{M}(S_i)$. Let $k' = \lceil \frac{3}{2}k \rceil$, and then for $j = k'+1, \ldots, m$, iteratively merge $S_j$ to the set with smallest $\mathcal{M}(S_i), i\le k'$. 
+
+5. __Chegger Sweep__: Foe $i = 1, \ldots, k'$, choose a threshold $\tau$ such that
+   $$
+   \hat{S}_{i}=\left\{v \in S_{i}:\left\|F^{*}(v)\right\|^{2} \geq \tau\right\}
+   $$
+   has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{S}_{2},\ldots, \hat{S}_{k}$ that have the smallest expansion.
+
 
     
 
