@@ -322,7 +322,7 @@ $$
 N_{c u t, k}(S)=\sum_{i=1}^{k} \frac{\left|E\left(S_{i}, \bar{S}_{i}\right)\right|}{d\left(S_{i}\right)}.
 $$
 
-Based on the $k$-way normalized cut, [Shi and Malik (2000)][1](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
+Based on the $k$-way normalized cut, Shi and Malik (2000)[3](https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf) proposes a greedy algorithm which iteratively minimize the $k$-way normalized cut to find the optimal $k$ partition sets $S_1, \ldots, S_k$. Given the adjacency matrix as input, the main procedure is described as follows:
 
 1. Compute the unnormalized Laplacian $L$.
 
@@ -332,7 +332,7 @@ Based on the $k$-way normalized cut, [Shi and Malik (2000)][1](https://people.ee
 
 4. Apply $k$-means algorithm to cluster $y_i, i = 1, \ldots, n$ into $k' \ge k$ clusters, and greedily merge clusters such that the normalized cut is minimized, until there are only $k$ clusters left.
 
-[Ng et al. (2002)][2](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf) also proposes a similar algorithm, however, it leverages the symmetric normalized Laplacian matrix $L_{sym} = I - D^{-1/2} A D^{-1/2}$. Given the adjacency matrix as input, the details are shown as below.
+Ng et al. (2002)[4](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf) also proposes a similar algorithm, however, it leverages the symmetric normalized Laplacian matrix $L_{sym} = I - D^{-1/2} A D^{-1/2}$. Given the adjacency matrix as input, the details are shown as below.
 
 1. Compute the symmetric normalized Laplacian matrix $L_{sym}$.
 
@@ -344,7 +344,7 @@ Based on the $k$-way normalized cut, [Shi and Malik (2000)][1](https://people.ee
 
 
 
-Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, [Lee et al. (2012)][3](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\phi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
+Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012)[5](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\phi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
 $$
     \phi_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
 $$
@@ -422,6 +422,8 @@ In the real-world experiments, we consider to apply the clustering algorithms on
 It can be seen that there are mainly two clusters, with each cluster represents a community.
 
 ![](images/d_spectral.png)
+
+## Reference
 
 - [1] Jure Leskovec, Stanford CS224W: Machine Learning with Graphs, http://cs224w.stanford.edu
 - [2] Von Luxburg, Ulrike. "A tutorial on spectral clustering." Statistics and computing 17.4 (2007): 395-416.
