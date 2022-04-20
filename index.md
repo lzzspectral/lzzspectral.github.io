@@ -385,7 +385,15 @@ Sort ${S_1, \ldots, S_m}$ in descending order based on $\mathcal{M}(S_i)$. Let $
 
 ## Examples
 
-After discussing about the theoretical details, we next conduct some experiments to examine 
+After discussing about the theoretical details, we next conduct some experiments to evaluate the spectral clustering algorithm in practice.
+
+### Motivating example
+
+Recall that $\lambda_2$ can be calculated as 
+$$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\frac{\Sigma_{(i,j)\in E}(y_i-y_j)^2}{\Sigma_{i} y_{i}^{2}}=\frac{y^TLy}{y^{T}y}$$
+
+![](images/example_eig.png)
+<br>
 
 ### Synthetic experiments
 
