@@ -277,7 +277,7 @@ $$
 \begin{equation}h_{i,j}=\left\{ \begin{aligned} \frac{1}{\sqrt{vol(A_j)}} \quad& v_i\in A_j  \\ 0 \quad& \text{otherwise} \end{aligned} \right. \qquad i=1,\dots, n;j=1, \dots,k \quad (2)\end{equation}
 $$
 
-Construct a matrix $H\in \mathcal{R}^{n\times k}$ as the matrix containing those $k$ indicator vectors as columns. The columns in $H$ are orthonormal to each other $\rightarrow$ $H^{'}DH=I$. Then, we have
+Construct a matrix $H\in \mathcal{R}^{n\times k}$ as the matrix containing those $k$ indicator vectors as columns $\rightarrow$ $H^{'}DH=I$. Then, we have
     
 $$
 (H^{'}LH)_{ii}=h_i^{'}Lh_i =\frac{\text{cut}(A_i, \bar{A_i})}{vol(A_i)}
