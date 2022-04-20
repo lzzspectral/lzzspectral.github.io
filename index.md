@@ -424,7 +424,7 @@ From the above two figures, it can be seen that the normalized spectral clusteri
  
 ### Real-world experiments
 
-In the real-world experiments, we consider to apply the clustering algorithms on the community detection task, and Dolphins social network is selected as the dataset for our experiment. The dolphins dataset represents a social network of bottlenose dolphins, wiht node representing dolphins and edges indicating a frequent associations between connected dolphins. The graph is plotted as follows:
+In the real-world experiments, we consider to apply the clustering algorithms on the community detection task, and Dolphins social network is selected as the dataset for our experiment. The dolphins dataset represents a social network of bottlenose dolphins, with node representing dolphins and edges indicating a frequent associations between connected dolphins. The graph is plotted as follows:
 
 ![](images/dolphins.png)
 
