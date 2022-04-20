@@ -185,6 +185,7 @@ We can see that using the above eigenvector approach, the 2-way spectral cluster
 ### Procedure
 
 One approach: Apply 2-way repeatedly until a total of $k$ clusters have been found.
+
 Another approach: 
 
 **Unnormalized**
