@@ -189,7 +189,7 @@ Another approach:
 
 4. Cluster the points $(y_i)_{i=1, \dots, n}$ using the k-means algorithm into clusters $C_1, \dots, C_k$.
 
-5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\left\{j\|y_j\in C_i\right\}$.
+5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\left\{ j\|y_j\in C_i \right\}$.
 
    
 
