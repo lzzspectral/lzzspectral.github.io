@@ -365,13 +365,14 @@ __Theorem__: For every graph $G$, and every $k \in \mathbb{N}$, we have
 $$
     \frac{\lambda_{k}}{2} \leq \rho_{G}(k) \leq O\left(k^{2}\right) \sqrt{\lambda_{k}}.
 $$
+
 It can be easily seen that $\rho_{G}(2) = \psi(G)$, and $\rho_{G}(k) = 0$ if and only if $|E(S_i, \bar{S_i})| = 0$, which corresponds to $\lambda_k = 0$ if and only if $G$ has at least $k$ components.
 
 Through the derivation procedure of the proof, a randomized algorithm for finding the optimal $k$ partitions is derived, and we describe it as follows. 
 
 __Main idea__: Ensure the local feature smoothness of vertex. Define the radial projection distance as 
 $$
-d_{F}(u, v)=\left\|\|\frac{F(u)}{\|\|F(u)\|\|}-\frac{F(v)}{\|\|F(v)\|\|}\right\|\|
+d_{F}(u, v)=\left\|\frac{F(u)}{\|F(u)\|}-\frac{F(v)}{\|F(v)\|}\right\|
 $$
 
 1. __Spectral Embedding__: Compute the first $2k$ eigenvectors $f_i, i = 1,\ldots, 2k$ by solving the generalized eigen-problem $Lf = \lambda D f$, and let $F(v) = [f_1(v), f_2(v), \ldots, f_{2k}(v)], v \in V$ be the embedding of node $v$. 
