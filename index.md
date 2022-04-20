@@ -51,7 +51,7 @@ There are three main matrix representations that we care about: Adjacency matrix
 
 $A$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
-   $A = \[a_{ij}\], a_{ij} = 1$ if there is an edge between $i$ and $j$, otherwise, $a_{ij} = 0$.
+   $A = [a_{ij}], a_{ij} = 1$ if there is an edge between $i$ and $j$, otherwise, $a_{ij} = 0$.
 
    There are some important properties of an ajacency matrix $A$: (1) Symmetric matrix, (2) Has $n$ real eigenvalues, (3) Eigenvectors are real-valued and orthogonal.
 
@@ -63,7 +63,7 @@ $A$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
    
    $D$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
-   $$D = \[d_{ii}\], d_{ii} = \text{ degree of node } i, \text{ other elements of $D$ are all $0$.}$$
+   $$D = [d_{ii}], d_{ii} = \text{ degree of node } i, \text{ other elements of $D$ are all $0$.}$$
 
    ##### Laplacian matrix ($L$):
    
