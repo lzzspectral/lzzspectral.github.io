@@ -131,7 +131,7 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
 
 2. Compute the eigenvectors and eigenvalues of $L$. Sort the eigenvalues by $\lambda_1\leq \lambda_2 \leq \dots$.
 
-3. Choose splitting points
+3. Choose splitting points according to $\lambda_2$.
 
    - Naive approach: split at 0. Assign labels to vertices based on the sign of coordinates of $\lambda_2$
 
