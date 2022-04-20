@@ -348,15 +348,15 @@ Ng et al. (2002)[4](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960
 
 
 
-Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012)[5](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $h_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
+Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012)[5](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\psi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
 $$
-    h_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
+    \psi_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
 $$
 
 where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement. The $k$-way expansion constant for every $k \in \mathbb{N}$ is defined as
 
 $$
-    \rho_{G}(k)=\min _{k-\text{partition} S_{1}, S_{2}, \ldots, S_{k}} \max \left\{h_{G}\left(S_{i}\right): i=1,2, \ldots, k\right\},
+    \rho_{G}(k)=\min _{k-\text{partition} S_{1}, S_{2}, \ldots, S_{k}} \max \left\{\psi_{G}\left(S_{i}\right): i=1,2, \ldots, k\right\},
 $$
 
 where the minimum is taken over all the collections of $k$ non-empty, disjoint subsets $S_1, S_2, \ldots, S_k \subseteq V$. Then the significant result is given as follows:
@@ -365,8 +365,11 @@ __Theorem__: For every graph $G$, and every $k \in \mathbb{N}$, we have
 $$
     \frac{\lambda_{k}}{2} \leq \rho_{G}(k) \leq O\left(k^{2}\right) \sqrt{\lambda_{k}}.
 $$
+It can be easily seen that $\rho_{G}(2) = \psi(G)$, and $\rho_{G}(k) = 0$ if and only if $|E(S_i, \bar{S_i})| = 0$, which corresponds to $\lambda_k = 0$ if and only if $G$ has at least $k$ components.
 
-Through the derivation procedure of the proof, a randomized algorithm for finding the optimal $k$ partitions is derived, and we describe it as follows.
+Through the derivation procedure of the proof, a randomized algorithm for finding the optimal $k$ partitions is derived, and we describe it as follows. 
+
+__Main idea__: Ensure the local feature smoothness of vertex. Define the radial projection distance as 
 
 1. __Spectral Embedding__: Compute the first $2k$ eigenvectors $f_i, i = 1,\ldots, 2k$ by solving the generalized eigen-problem $Lf = \lambda D f$, and let $F(v) = [f_1(v), f_2(v), \ldots, f_{2k}(v)], v \in V$ be the embedding of node $v$. 
 
