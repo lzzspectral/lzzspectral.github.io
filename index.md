@@ -49,7 +49,7 @@ There are three main matrix representations that we care about: Adjacency matrix
 
 ##### Adjacency matrix ($A$):
 
-$A$ is a $n \times n$ matrix, where $n = |V|$, and it defines as:
+$A$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
    $A = \[a_{ij}\], a_{ij} = 1$ if there is an edge between $i$ and $j$, otherwise, $a_{ij} = 0$.
 
@@ -61,7 +61,7 @@ $A$ is a $n \times n$ matrix, where $n = |V|$, and it defines as:
 
    ##### Degree matrix ($D$):
    
-   $D$ is a $n \times n$ matrix, where $n = |V|$, and it defines as:
+   $D$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
    $$D = \[d_{ii}\], d_{ii} = \text{ degree of node } i, \text{ other elements of $D$ are all $0$.}$$
 
