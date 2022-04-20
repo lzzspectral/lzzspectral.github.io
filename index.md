@@ -411,7 +411,7 @@ The above figure shows the clustering results when we set the number of clusters
 
 It can be seen that there is a relative large gap between the second eigenvalue and the third eigenvalue, and also between the fourth and fifth eigenvalue, the eighth and ninth eigenvalue.
 
-![](experiment_2.png)
+![](images/experiment_2.png)
 
 <br>
 
