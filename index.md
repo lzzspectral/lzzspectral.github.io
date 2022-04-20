@@ -8,7 +8,7 @@ How to define a good partition?
    connections.
 2. Minimize the number of between-group connections.
 
-<div style="width: 60%; height: 60%">
+<div style="width: 40%; height: 40%">
    
    ![](images/good_partition.png)
 
