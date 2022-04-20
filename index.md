@@ -1,4 +1,4 @@
-## Introduction & Graph Cut
+## Introduction and Graph Cut
 
 Suppose we have an undirected graph $G(V,E)$, and we would like to perform a bi-partitioning task on the graph, i.e., dividing vertices in $V$ into two disjoint groups $A$ and $B$.
 
