@@ -2,11 +2,6 @@ Hello and welcome to this blog. Edit the `index.md` file to change this content.
 
 ![Image of fast.ai logo](images/logo.png)
 
-## This is a title
-$x + y = b$ in tttttt
-
-$$ 1 + 3 = 4$$
-And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
 
 ## Introduction \& Graph Cut
 
