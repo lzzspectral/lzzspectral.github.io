@@ -144,12 +144,12 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
 The intuition of using $\lambda_2$
 
 $$
-\lambda_2=\min_{\sum x_i=0}\frac{\sum_{(i,j)\in E}(x_i-x_j)^2}{\sum_i x_i^2}
+\lambda_2=\min_{\sum y_i=0}\frac{\sum_{(i,j)\in E}(y_i-y_j)^2}{\sum_i y_i^2}
 \\
-\lambda_2=0 \Rightarrow \forall (u,v)\in E, x_u=x_v
+\lambda_2=0 \Rightarrow \forall (u,v)\in E, y_u=y_v
 $$
 
-Then, two clusters are formed by looking the sign of $x_i$.
+Then, two clusters are formed by looking the sign of coordinates of $y$.
 
 **Cheeger's inequality**
 
