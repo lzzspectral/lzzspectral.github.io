@@ -105,7 +105,9 @@ $$
 
 So, we want to assign values $x_i$ to nodes $i$ such that few edges cross $0$. (we want $x_i$ and $x_j$ to subtract each other)
 
-<image src = "images/balance_to_minimize.png" width="500">
+   ![](images/balance.png)
+   
+
 
 ### Rayleigh Theorem
 
