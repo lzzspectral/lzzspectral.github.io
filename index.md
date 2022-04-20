@@ -19,7 +19,8 @@ $$cut(A,B)=\Sigma_{i\in A, j\in B}w_{ij}$$
 
 where, if the graph is weighted $w_{ij}$ is the weight, otherwise, all $w_{ij}\in \{0,1\}$.
 
-    
+![](images/graph_cuts.png)
+
 <br>
 
 At this point, we first focus on the unweighted graph.
