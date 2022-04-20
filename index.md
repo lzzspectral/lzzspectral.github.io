@@ -349,13 +349,13 @@ $$
     \phi_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
 $$
 
-    where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement. The $k$-way expansion constant for every $k \in \mathbb{N}$ is defined as
+where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement. The $k$-way expansion constant for every $k \in \mathbb{N}$ is defined as
 
 $$
     \rho_{G}(k)=\min _{k-\text{partition} S_{1}, S_{2}, \ldots, S_{k}} \max \left\{\phi_{G}\left(S_{i}\right): i=1,2, \ldots, k\right\},
 $$
 
-    where the minimum is taken over all the collections of $k$ non-empty, disjoint subsets $S_1, S_2, \ldots, S_k \subseteq V$. Then the significant result is given as follows:
+where the minimum is taken over all the collections of $k$ non-empty, disjoint subsets $S_1, S_2, \ldots, S_k \subseteq V$. Then the significant result is given as follows:
 
 __Theorem__: For every graph $G$, and every $k \in \mathbb{N}$, we have
 $$
