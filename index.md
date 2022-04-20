@@ -363,7 +363,8 @@ $$
     
 
 ## Examples
-
+### Synthetic experiments
 <image src = "images/improved_sc.png" width="500">
 
+### Real-world experiments
 - [1][test](baidu.com)
