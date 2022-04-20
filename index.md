@@ -169,7 +169,7 @@ We can see that using the above eigenvector approach, the 2-way spectral cluster
 One approach: Apply 2-way repeatedly until a total of $k$ clusters have been found.
 Another approach: 
 
-Unnormalized
+**Unnormalized**
 
 1. Compute the first $k$ eigenvectors $\lambda_1,\dots, \lambda_k$ of $L$.
 
@@ -179,11 +179,11 @@ Unnormalized
 
 4. Cluster the points $(y_i)_{i=1, \dots, n}$ using the k-means algorithm into clusters $C_1, \dots, C_k$.
 
-5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\{j|y_j\in C_i\}$.
+5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\{j\|y_j\in C_i\}$.
 
    
 
-Normalized
+**Normalized**
 
 1. Compute the first $k$ generalized eigenvectors $\lambda_1,\dots, \lambda_k$ of the generalized eigenproblem $L\lambda =\alpha D \lambda$ ($D$ is the degree matrix).
 2. The rest are the same.
@@ -232,8 +232,10 @@ $$
 The problem of minimizing $\text{RatioCut}(A_1,\dots, A_k)$ can be written as
     
 $$
-\min_{A_1,\dots, A_k}Tr(H^{'}LH)\quad \text{s.t.} \quad H^{'}H=I, \text{$H$ as defined in (1)}
+\min_{A_1,\dots, A_k}Tr(H^{'}LH)\quad \text{s.t.} \quad H^{'}H=I
 $$
+
+$H$ is defined in (1).
 
 Relax the problem as:
     
@@ -263,8 +265,10 @@ $$
 as above. So the problem of minimizing Ncut can be formulated as
     
 $$
-\min_{A_1,\dots, A_k}Tr(H^{'}LH)\quad \text{s.t.} \quad H^{'}DH=I, \text{$H$ as defined in (2)}
+\min_{A_1,\dots, A_k}Tr(H^{'}LH)\quad \text{s.t.} \quad H^{'}DH=I
 $$
+
+$H$ is defined in (2).
 
 Relax the problem and substituting $T=D^{1/2}H$, we have
     
