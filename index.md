@@ -62,6 +62,8 @@ There are three main matrix representations that we care about: Adjacency matrix
    $D = [d_{ii}], d_{ii} =$ degree of node $i$, other elements of $D$ are all $0$.
 
    **Laplacian matrix ($L$)**: $L$ is defined as, another $n \times n$ matrix, the difference between $D$ and $A$, i.e., $L = D - A$.
+   
+   ![](images/laplacian.png)
 
    Note that there is a trivial eigenpair for a laplacian matrix $L$: $x=(1,\cdots,1)$ then $L\cdot x=0$ and so $\lambda=\lambda_1 \text{(smallest eigenvalue)} = 0$.
 
