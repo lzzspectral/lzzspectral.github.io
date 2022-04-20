@@ -47,27 +47,21 @@ Advantages: Conductance produces more balanced partitions. The reason is as foll
 
 There are three main matrix representations that we care about: Adjacency matrix, degree matrix, and laplacian matrix.
 
-##### Adjacency matrix ($A$):
-
-$A$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
+**Adjacency matrix ($A$)**: $A$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
    $A = [a_{ij}], a_{ij} = 1$ if there is an edge between $i$ and $j$, otherwise, $a_{ij} = 0$.
 
    There are some important properties of an ajacency matrix $A$: (1) Symmetric matrix, (2) Has $n$ real eigenvalues, (3) Eigenvectors are real-valued and orthogonal.
 
-   #### Spectral Graph Theory: Analyze the “spectrum” of matrix representing $G$.
+   **Spectral Graph Theory**: Analyze the “spectrum” of matrix representing $G$.
 
    Definition (Spectrum): Eigenvectors $x^{(i)}$ of a graph ('s ajacency matrix $A$), ordered by the magnitude (strength) of their corresponding eigenvalues $\lambda_i$: $\Lambda = \{\lambda_1,\lambda_2,\cdots,\lambda_n\}$, where $\lambda_1\leq \lambda_2 \leq \cdots \leq \lambda_n$.
 
-   ##### Degree matrix ($D$):
-   
-   $D$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
+   **Degree matrix ($D$)**: $D$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
    $$D = [d_{ii}], d_{ii} = \text{ degree of node } i, \text{ other elements of $D$ are all $0$.}$$
 
-   ##### Laplacian matrix ($L$):
-   
-   $L$ is defined as, another $n \times n$ matrix, the difference between $D$ and $A$, i.e., $L = D - A$.
+   **Laplacian matrix ($L$)**: $L$ is defined as, another $n \times n$ matrix, the difference between $D$ and $A$, i.e., $L = D - A$.
 
    Note that there is a trivial eigenpair for a laplacian matrix $L$: $x=(1,\cdots,1)$ then $L\cdot x=0$ and so $\lambda=\lambda_1 \text{(smallest eigenvalue)} = 0$.
 
