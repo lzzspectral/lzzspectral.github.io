@@ -8,10 +8,8 @@ How to define a good partition?
    connections.
 2. Minimize the number of between-group connections.
 
-<image src = "images/good_partition.png" width="500">
-    
-<br>
 
+<br>
 
 Definition (Graph Cuts): Set of edges with one endpoint in each group:
 
@@ -19,15 +17,12 @@ $$cut(A,B)=\Sigma_{i\in A, j\in B}w_{ij}$$
 
 where, if the graph is weighted $w_{ij}$ is the weight, otherwise, all $w_{ij}\in \{0,1\}$.
 
-<image src = "images/graph_cuts.png" width="500">
     
 <br>
 
 At this point, we first focus on the unweighted graph.
 
 So, what is a good graph cut criterion?
-    
-
 ### Minimum-cut: Minimize weight of connections between groups.
 
 $$\arg \min_{A,B}cut(A,B)$$
