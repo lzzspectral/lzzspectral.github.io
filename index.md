@@ -367,7 +367,6 @@ Through the derivation procedure of the proof, a randomized algorithm for findin
 1. __Spectral Embedding__: Compute the first $2k$ eigenvectors $f_i, i = 1,\ldots, 2k$ by solving the generalized eigen-problem $Lf = \lambda D f$, and let $F(v) = [f_1(v), f_2(v), \ldots, f_{2k}(v)], v \in V$ be the embedding of node $v$. 
 
 2. __Random Projection__: Define $h = O(\log k)$, and perform random projection of the vertex embeddings $F(v)$ from $\mathbb{R}^{2k}$ to $\mathbb{R}^{h}$. Specifically, let $\Gamma_{2 k, h}: \mathbb{R}^{2 k} \rightarrow \mathbb{R}^{h}$ be a random linear mapping given by the dot product of the embedding and $h$ i.i.d. Gaussian vectors (i.e., $\Gamma_{2 k, h}(x)=\frac{1}{\sqrt{h}}\left(\left\langle g_{1}, x\right\rangle, \ldots,\left\langle g_{h}, x\right\rangle\right)$), and then we have for each $v \in V$, 
-
 $$
 F^{*}(v)=\frac{1}{\sqrt{h}}\left(\left\langle g_{1}, F(v)\right\rangle, \ldots,\left\langle g_{h}, F(v)\right\rangle\right).
 $$
@@ -378,12 +377,7 @@ Now we have $m$ partitions $S_1 \cup S_2 \cup \ldots \cup S_m = V$.
 4. __Merging__: For a subset $S \subseteq V$, define $\mathcal{M}(S) == \sum_{v \in S} w(v) \| F^{*}(v) \|^2$. 
 Sort ${S_1, \ldots, S_m}$ in descending order based on $\mathcal{M}(S_i)$. Let $k' = \lceil \frac{3}{2}k \rceil$, and then for $j = k'+1, \ldots, m$, iteratively merge $S_j$ to the set with smallest $\mathcal{M}(S_i), i\le k'$. 
 
-5. __Chegger Sweep__: Foe $i = 1, \ldots, k'$, choose a threshold $\tau$ such that
-   $$
-   \hat{S}_{i}=\left\{v \in S_{i}:\left\|F^{*}(v)\right\|^{2} \geq \tau\right\}
-   $$   
-      
-   has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{S}_{2},\ldots, \hat{S}_{k}$ that have the smallest expansion.
+5. __Chegger Sweep__: Foe $i = 1, \ldots, k'$, choose a threshold $\tau$ such that $\hat{S}_{i}=\{v \in S_{i}:\left\|F^{*}(v)\right\|^{2} \geq \tau\}$   has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{S}_{2},\ldots, \hat{S}_{k}$ that have the smallest expansion.
 
 
 ## Examples
