@@ -347,16 +347,16 @@ $$
 
 3. __Random Partitioning__: Determine some constant $m$, and randomly sample $r$ points $x_1, \ldots, x_m$ from the unit ball in $\mathbb{R}^{h}$, which served as "anchor points" (or "centroids"). Each $x_i$ can be regarded as the anchor point of cluster $i$, and we assign each vertex $v \in V$ to its closest anchor point, and the distance is measured by $\| x_i - \frac{F^{*}(v)}{\| F^{*}(v) \|} \|$. Now we have $m$ partitions $S_1 \cup S_2 \cup \ldots \cup S_m = V$.
 
-4. __Merging__: For a subset $S \subseteq V$,  define $\mathcal{M}(S) == \sum_{v \in S} w(v) \|F^{*}(v)\|^2$. Sort ${S_1, \ldots, S_m}$ in descending order based on $\mathcal{M}(S_i)$. Let $k' = \lceil \frac{3}{2}k \rceil$, and then for $j = k'+1, \ldots, m$, iteratively merge $S_j$ to the set with smallest $\mathcal{M}(S_i), i\le k'$. 
+4. __Merging__: For a subset $S \subseteq V$, define $\mathcal{M}(S) == \sum_{v \in S} w(v) \| F^{*}(v) \|^2$. 
+Sort ${S_1, \ldots, S_m}$ in descending order based on $\mathcal{M}(S_i)$. Let $k' = \lceil \frac{3}{2}k \rceil$, and then for $j = k'+1, \ldots, m$, iteratively merge $S_j$ to the set with smallest $\mathcal{M}(S_i), i\le k'$. 
 
 5. __Chegger Sweep__: Foe $i = 1, \ldots, k'$, choose a threshold $\tau$ such that
    $$
    \hat{S}_{i}=\left\{v \in S_{i}:\left\|F^{*}(v)\right\|^{2} \geq \tau\right\}
-   $$
-   has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{S}_{2},\ldots, \hat{S}_{k}$ that have the smallest expansion.
+   $$   
+   
+has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{S}_{2},\ldots, \hat{S}_{k}$ that have the smallest expansion.
 
-
-​    
 
 ## Examples
 
