@@ -8,7 +8,7 @@ How to define a good partition?
    connections.
 2. Minimize the number of between-group connections.
 
-![good partition](images/good_partition.png)
+![good partition](images/good_partition.png = 100x20)
 <br>
 
 Definition (Graph Cuts): Set of edges with one endpoint in each group:
