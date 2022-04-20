@@ -324,7 +324,7 @@ Ng et al. (2002) [2](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa596
 
 
 
-Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012) [3](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\phi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
+Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, [Lee et al. (2012)][3](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\phi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
 $$
     \phi_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
 $$
