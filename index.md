@@ -33,7 +33,7 @@ At this point, we first focus on the unweighted graph.
 
 So, what is a good graph cut criterion?
     
-# Minimum-cut: Minimize weight of connections between groups.
+### Minimum-cut: Minimize weight of connections between groups.
     
 $$\arg \min_{A,B}cut(A,B)$$
     
@@ -41,7 +41,7 @@ $$\arg \min_{A,B}cut(A,B)$$
 
 - Does not consider internal cluster connectivity.
 
-# Conductance: Connectivity between groups relative to the density of each group.
+### Conductance: Connectivity between groups relative to the density of each group.
 
 $$\Phi(A,B)=\frac{cut(A,B)}{\min(vol(A),vol(B))}$$
 
