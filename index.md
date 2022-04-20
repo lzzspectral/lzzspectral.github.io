@@ -423,4 +423,8 @@ It can be seen that there are mainly two clusters, with each cluster represents 
 
 ![](images/d_spectral.png)
 
-- [1][test](baidu.com)
+- [1] Jure Leskovec, Stanford CS224W: Machine Learning with Graphs, http://cs224w.stanford.edu
+- [2] Von Luxburg, Ulrike. "A tutorial on spectral clustering." Statistics and computing 17.4 (2007): 395-416.
+- [3] Shi, Jianbo, and Jitendra Malik. "Normalized cuts and image segmentation." IEEE Transactions on pattern analysis and machine intelligence 22.8 (2000): 888-905.
+- [4] Ng, Andrew, Michael Jordan, and Yair Weiss. "On spectral clustering: Analysis and an algorithm." Advances in neural information processing systems 14 (2001).
+- [5] Lee, James R., Shayan Oveis Gharan, and Luca Trevisan. "Multiway spectral partitioning and higher-order cheeger inequalities." Journal of the ACM (JACM) 61.6 (2014): 1-30.
