@@ -109,11 +109,7 @@ $$
 
 So, we want to assign values $x_i$ to nodes $i$ such that few edges cross $0$. (we want $x_i$ and $x_j$ to subtract each other)
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{balance to minimize.png}
-    \label{fig:my_label}
-\end{figure}
+<image src = "images/balance_to_minimize.png" width="500">
 
 \section{Rayleigh Theorem}
 
