@@ -297,7 +297,7 @@ $$
 \min_{H\in \mathcal{R}^{n\times k}} Tr(T^{'}D^{-1/2}LD^{-1/2}T) \quad \text{s.t.} \quad T^{'}T=I
 $$
 
-This can also lead to the solution $H$ consisting of the first $k$ generalized eigenvectors of $L\lambda =\alpha D \lambda$, corresponding the the normalized spectral clustering algorithm.
+This can also lead to the solution $H$ consisting of the first $k$ generalized eigenvectors of $L\lambda =\alpha D \lambda$, corresponding to the normalized spectral clustering algorithm.
 
 ---
 
