@@ -175,7 +175,7 @@ $$
 
 The inequality relates the property of conductance to $\lambda_2$. It implies that if $\lambda_2$ is small, the graph is partitionable. If $\lambda_2$ is large, the graph is not partitionable. 
 
-We can see that using the above eigenvector approach, the 2-way spectral clustering algorithm is able to find a cut that has at most **twice** the conductance as the optimal one of conductance $\phi(G)$.
+We can see that using the above eigenvector approach, the 2-way spectral clustering algorithm is able to find a cut that has at most **twice** the conductance as the optimal one.
 
 
 ---
