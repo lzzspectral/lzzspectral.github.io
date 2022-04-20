@@ -147,14 +147,7 @@ $$
 
 Then, two clusters are formed by looking the sign of $x_i$.
 
-
-The **conductance** of a subset $S\subset V$ can be defined as
-
-$$
-\phi(S)=\frac{|E(S, \bar{S})|}{d\min\left\{|S|, |\bar{S}|\right\}}
-$$
-
-where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement.
+**Cheeger's inequality**
 
 The conductance of the graph $G$ is defined as
 
@@ -164,7 +157,7 @@ $$
 
 which is a way of measuring the performance of a particular partition of the graph.
 
-**Cheeger's inequality**
+
 
 Cheeger's Inequality provides a worst-case performance guarantee for spectral clustering, which states that for any graph $G$,
 
