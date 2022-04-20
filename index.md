@@ -348,15 +348,15 @@ Ng et al. (2002)[4](https://papers.nips.cc/paper/2001/file/801272ee79cfde7fa5960
 
 
 
-Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012)[5](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $\phi_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
+Although the algorithms mentioned above achieves great performance empirically, they are heuristic and lack theoretical support. Recently, Lee et al. (2012)[5](https://arxiv.org/pdf/1111.1055.pdf) generalized the Chegger inequalities to higher-order eigenvalues, and theoretically demonstrate why $k$-way spectral clustering algorithms work well. In particular, let $h_{G}(S)$ denote the expansion of $S$ for any subset $S \subseteq V$, and 
 $$
-    \phi_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
+    h_{G}(S)=\frac{|E(S, \bar{S})|}{d|S|},
 $$
 
 where $E(S, \bar{S})$ denotes the set of edges of $G$ crossing from $S$ to its complement. The $k$-way expansion constant for every $k \in \mathbb{N}$ is defined as
 
 $$
-    \rho_{G}(k)=\min _{k-\text{partition} S_{1}, S_{2}, \ldots, S_{k}} \max \left\{\phi_{G}\left(S_{i}\right): i=1,2, \ldots, k\right\},
+    \rho_{G}(k)=\min _{k-\text{partition} S_{1}, S_{2}, \ldots, S_{k}} \max \left\{h_{G}\left(S_{i}\right): i=1,2, \ldots, k\right\},
 $$
 
 where the minimum is taken over all the collections of $k$ non-empty, disjoint subsets $S_1, S_2, \ldots, S_k \subseteq V$. Then the significant result is given as follows:
