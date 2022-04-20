@@ -194,11 +194,13 @@ Another approach:
 
 2. Let $U\in \mathcal{R}^{n\times k}$ be the matrix containing $\lambda_1,\dots, \lambda_k$ as columns.
 
-3. Let $y_i\in \mathcal{R}^k$ with $i=1, \dots, n$ be the vector corresponding tot he $i$-th row of $U$.
+3. Let $y_i\in \mathcal{R}^k$ with $i=1, \dots, n$ be the vector corresponding to the $i$-th row of $U$.
 
 4. Cluster the points $(y_i)_{i=1, \dots, n}$ using the k-means algorithm into clusters $C_1, \dots, C_k$.
 
-5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i={j, y_j\in C_i}$.
+5. Output the clusters of vertices $A_1, \dots, A_k$ with
+
+$$A_i=\left\{j, y_j\in C_i\right\}$$
 
    
 
