@@ -387,10 +387,46 @@ has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{
 
 ## Examples
 
+After discussing about the theoretical details, we next conduct some experiments to examine 
+
 ### Synthetic experiments
+
+We first construct a synthetic $2$-circle dataset, which has a large circle containing a smaller circle in $2$-d space, and $k$-means algorithm is known to fail to cluster points in each circle correctly.
 
 ![circle experiment](images/experiment_1.png)
 
+<br>
+
+The above figure shows the clustering results when we set the number of clusters equals to $2$. As we expected, $k$-means algorithm fails on clustering points correctly, and both normalized spectral clustering and randomized spectral clustering algorithms classify points into their circles correctly. Next, we plot the eigenvalues of the Laplacian matrix to see where the eigenvalues have a large gap.
+
+![](images/eigeval_circle.png)
+
+<br>
+
+It can be seen that there is a relative large gap between the second eigenvalue and the third eigenvalue, and also between the fourth and fifth eigenvalue, the eighth and ninth eigenvalue.
+
+![](experiment_2.png)
+
+<br>
+
+![](images/experiment_3.png)
+
+<br>
+
+From the above two figures, it can be seen that the normalized spectral clustering algorithm can still form $k$ disjoint sets, while the randomized algorithm classifies some points incorrectly. From our point of view, one reason is that the randomized clustering algorithm is sensitive to the generation of "anchor points", and when the number of clusters increases, misclassification happens if the optimal anchor points are not chosen.
+
+ 
+
 ### Real-world experiments
+
+In the real-world experiments, we consider to apply the clustering algorithms on the community detection task, and Dolphins social network is selected as the dataset for our experiment. The dolphins dataset represents a social network of bottlenose dolphins, wiht node representing dolphins and edges indicating a frequent associations between connected dolphins. The graph is plotted as follows:
+
+![](images/dolphins.png)
+
+ <br>
+
+It can be seen that there are mainly two clusters, with each cluster represents a community.
+
+![](images/d_spectral.png)
 
 - [1][test](baidu.com)
