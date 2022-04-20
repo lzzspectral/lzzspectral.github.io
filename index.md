@@ -378,7 +378,7 @@ has the least expansion value. Then we select $k$ of the sets $\hat{S}_{1},\hat{
 
 ### Synthetic experiments
 
-<image src = "images/improved_sc.png" width="500">
+![circle experiment](images/experiment_1.png)
 
 ### Real-world experiments
 
