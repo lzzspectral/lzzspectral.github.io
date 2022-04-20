@@ -363,5 +363,7 @@ $$
     
 
 ## Examples
-    
+
+<image src = "images/improved_sc.png" width="500">
+
 - [1][test](baidu.com)
