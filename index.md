@@ -3,7 +3,7 @@ Hello and welcome to this blog. Edit the `index.md` file to change this content.
 ![Image of fast.ai logo](images/logo.png)
 
 
-## Introduction \& Graph Cut
+## Introduction & Graph Cut
 
 Suppose we have an undirected graph $G(V,E)$, and we would like to perform a bi-partitioning task on the graph, i.e., dividing vertices in $V$ into two disjoint groups $A$ and $B$.
 
@@ -24,17 +24,13 @@ $$cut(A,B)=\Sigma_{i\in A, j\in B}w_{ij}$$
 
 where, if the graph is weighted $w_{ij}$ is the weight, otherwise, all $w_{ij}\in \{0,1\}$.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{graph cuts.png}
-    \label{fig:my_label}
-\end{figure}
+    
+<image src = "images/graph_cuts.png" width="500">
+    
+<br>
 
-\vspace{0.5cm}
+At this point, we first focus on the unweighted graph.
 
-In this blog, we mainly focus on the unweighted graph.
-
-\vspace{0.5cm}
 So, what is a good graph cut criterion?
 
     \begin{enumerate}
