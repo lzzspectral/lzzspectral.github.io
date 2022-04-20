@@ -121,11 +121,11 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
    
 
 
-## Algorithm
+# Algorithm
 
-### 2-Way spectral clustering
+## 2-Way spectral clustering
 
-#### Procedure
+### Procedure
 
 1. Compute the Laplacian matrix $L$ of the graph.
 
@@ -133,9 +133,9 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
 
 3. Choose splitting points
 
-   	- Naive approach: split at 0. Assign labels to vertices based on the sign of coordinates of $\lambda_2$
+   - Naive approach: split at 0. Assign labels to vertices based on the sign of coordinates of $\lambda_2$
 
-#### Theoretical Guarantee
+### Theoretical Guarantee
 
 
 The **conductance** of a subset $S\subset V$ can be defined as
@@ -162,9 +162,9 @@ The inequality relates the property of conductance to $\lambda_2$. It implies th
 
 We can see that using the above eigenvector approach, the 2-way spectral clustering algorithm is able to find a cut that has at most **twice** the conductance as the optimal one of conductance $\phi(G)$.
 
-### k-way spectral clustering
+## k-way spectral clustering
 
-#### Procedure
+### Procedure
 
 One approach: Apply 2-way repeatedly until a total of $k$ clusters have been found.
 Another approach: 
@@ -179,7 +179,7 @@ Unnormalized
 
 4. Cluster the points $(y_i)_{i=1, \dots, n}$ using the k-means algorithm into clusters $C_1, \dots, C_k$.
 
-5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\left\{j|y_j\in C_i\right\}$.
+5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\{j|y_j\in C_i\}$.
 
    
 
@@ -189,7 +189,7 @@ Normalized
 2. The rest are the same.
 
 
-#### Theoretical Guarantee
+### Theoretical Guarantee
 
 **Graph cut point of view**
 
@@ -280,7 +280,7 @@ This can also lead to the solution $H$ consisting of the first $k$ generalized e
 
 2. Fast approximate spectral clustering https://people.eecs.berkeley.edu/~jordan/papers/yan-etal-long.pdf
 
-   	$O(k^3)+O(knt)$, where $t$ is the number of iterations
+   $O(k^3)+O(knt)$, where $t$ is the number of iterations
 
     
 
