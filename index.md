@@ -43,7 +43,7 @@ where $vol(A)$ = total degree of the nodes in $A$ = number of edge end points in
 
 Advantages: Conductance produces more balanced partitions. The reason is as following: The total number of edges in the graph $G$ is fixed. After bi-partitioning, we split the total degree of all nodes in $G$ into two parts, and take the smaller one among these two as the denominator of the conductance. Therefore, a smaller conductance tends to give us a more balanced partition.
 
-### Graph Laplacian matrix
+## Graph Laplacian matrix
 
 There are three main matrix representations that we care about: Adjacency matrix, degree matrix, and laplacian matrix.
 
