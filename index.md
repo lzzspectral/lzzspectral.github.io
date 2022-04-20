@@ -119,7 +119,7 @@ $$\min_{y\in\mathbb{R}^n:\Sigma_iy_i=0, \Sigma_iy^2_i=1}f(y)=\Sigma_{(i,j)\in E}
 3. __We can use the sign of $\mathbf{x_i}$ to determine cluster assignment of node $\mathbf{i}$__.
    
    
-
+---
 
 # Algorithm
 
@@ -162,6 +162,9 @@ The inequality relates the property of conductance to $\lambda_2$. It implies th
 
 We can see that using the above eigenvector approach, the 2-way spectral clustering algorithm is able to find a cut that has at most **twice** the conductance as the optimal one of conductance $\phi(G)$.
 
+
+---
+
 ## k-way spectral clustering
 
 ### Procedure
@@ -179,7 +182,7 @@ Another approach:
 
 4. Cluster the points $(y_i)_{i=1, \dots, n}$ using the k-means algorithm into clusters $C_1, \dots, C_k$.
 
-5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\{j\|y_j\in C_i\}$.
+5. Output the clusters of vertices $A_1, \dots, A_k$ with $A_i=\left\{j\|y_j\in C_i\right\}$.
 
    
 
@@ -277,6 +280,8 @@ $$
 $$
 
 This can also lead to the solution $H$ consisting of the first $k$ generalized eigenvectors of $L\lambda =\alpha D \lambda$, corresponding the the normalized spectral clustering algorithm.
+
+---
 
 ### Time Complexity
 
