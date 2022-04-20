@@ -59,7 +59,7 @@ There are three main matrix representations that we care about: Adjacency matrix
 
    **Degree matrix ($D$)**: $D$ is a $n \times n$ matrix, where $n = \|V\|$, and it defines as:
 
-   $$D = [d_{ii}], d_{ii} = \text{ degree of node } i, \text{ other elements of $D$ are all $0$.}$$
+    $D = [d_{ii}], d_{ii} =$ degree of node $i$, other elements of $D$ are all $0$.
 
    **Laplacian matrix ($L$)**: $L$ is defined as, another $n \times n$ matrix, the difference between $D$ and $A$, i.e., $L = D - A$.
 
